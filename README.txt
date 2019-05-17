@@ -15,27 +15,13 @@ cuentan con un segundo sanitario lo que favorece a que su reparación no sea urg
 Es por ello, se requiere centralizar cada uno de los servicios u oficios cuya información es bastante escasa en un solo sitio en donde se pueda buscar,
 consultar, cotizar, contactar, ver la calidad de los maestro mediante un indicador, comentar los servicio prestados y valorarlos con medidor de satisfacción, etc.
 
---Code Samples
-La pagina esta compuesta por la siguiente estructura:
-
--Proyecto DAI ==> Directorio Raiz
-
-    -index.html     ==> Pagina principal.
-    -login.html     ==> Pagina donde el usuario ingresa a su cuenta.
-    -nosotros.html  ==> Pagina donde damos una breve reseña de nosotros.
-    -signup.html    ==> Pagina donde el usuario se crea su cuenta.
-
-    -css ==> Carpeta que contiene los codigos CSS de la pagina.
-
-      -style.css     ==> CSS de pagina principal.
-      -login.css     ==> CSS de pagina donde el usuario ingresa a su cuenta.
-      -nosotros.css  ==> CSS de pagina donde damos una breve reseña de nosotros.
-      -signup.css    ==> CSS de pagina donde el usuario se crea su cuenta.
-
-        -js ==> Carpeta que contiene los codigos JS de la pagina.
-
-          -login.js     ==> Jquery de pagina donde el usuario ingresa a su cuenta.
-          -signup.js    ==> Jquery de pagina donde el usuario se crea su cuenta.
-
---Installation
+--Guide User
 Para utilizar de manera correcta la pagina Ayuda.ME, favor abrir en su navegador el archivo "index.html" ubicado en el "Directorio Raiz" del proyecto.
+
+--Installation DataBase
+Para utilizar la base de datos ocupada en este proyecto seguir las siguientes intrucciones:
+
+  1.- Crear la Base de Datos en su motor con nombre "dbproyecto".
+  2.- Importar el archivo "Create DataBase dbproyecto.sql" o copie su contenido para drear las tablas.
+  3.- Si copio el contenido ejecute el codigo el cual ingresara las tablas y datos correspondiente al proyecto.
+  4.- Base de Datos "dbproyecto" lista para utilizar.
