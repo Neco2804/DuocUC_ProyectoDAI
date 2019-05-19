@@ -18,9 +18,9 @@
     <header>
       <h1>Ayuda.Me Bienvenid@</h1>
       <nav>
-        <a href="signup.html" id="sign-up" target="_blank">Sign Up</a>
-        <a href="login.html" id="log-in" target="_blank">Log In</a>
-        <a href="nosotros.html" id="nosotros-page" target="_blank">Nosotros</a>
+        <a href="signup.php" id="sign-up" target="_blank">Sign Up</a>
+        <a href="login.php" id="log-in" target="_blank">Log In</a>
+        <a href="nosotros.php" id="nosotros-page" target="_blank">Nosotros</a>
       </nav>
     </header>
   </div>

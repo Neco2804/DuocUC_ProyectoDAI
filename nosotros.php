@@ -17,7 +17,7 @@
 
       <h2>Bienvenid@, ¿Quienes Somos?</h2>
       <nav>
-        <a href="index.html">Volver al inicio</a>
+        <a href="index.php">Volver al inicio</a>
 
 
       </nav>
