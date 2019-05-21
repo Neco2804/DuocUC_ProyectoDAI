@@ -1,10 +1,10 @@
-<$php
+<?php
 
     function connect(){
 
         $database_name = "dbproyecto";
-        $username = "dbproyecto";
-        $password = "dbproyecto";
+        $username = "user";
+        $password = "user";
         $server = "localhost";
 
         $link = mysqli_connect($server, $database_name, $username, $password);
