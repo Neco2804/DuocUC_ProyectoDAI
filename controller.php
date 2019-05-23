@@ -26,17 +26,21 @@
         //USER
         $usuario = new User('14567825', '1', 'Sebastian', 'Muñoz', 'Antonio Varas', '5', 'reparada@gmail.com', '1', '7');
         $usuario-> save();
-        if ($usuario.$TYPE_USER == 1) {
+
+        $transform = (int)$usuario->RUT;
+
+        if ($usuario->TYPE_USER == (int)'1') {
             //CLIENT
-            $cliente = new Client($this->$usuario.$RUT);
+            $cliente = new Client($transform);
             $cliente-> save();
             echo $cliente->RUT;
-        }if($usuario.$TYPE_USER == 2){
+        }else {
             //WORKER
-            $trabajador = new Worker($this->$usuario.$RUT,'1');
+            $trabajador = new Worker($transform,'1');
             $trabajador-> save();
             echo $trabajador->COD_PROFESSION;            
         }
+
         echo $usuario->RUT;
 
         //WORK_ORDERS - PENDIENTE
