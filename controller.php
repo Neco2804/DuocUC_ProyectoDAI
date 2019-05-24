@@ -10,10 +10,12 @@
     include('Models\user.php');
     include('Models\work_orders.php');
     include('Models\worker.php');
+    include('Models\comments.php')
     
     //Funciones para agregar data
-    
-        /*//COMMUNE
+
+        /*
+        //COMMUNE
         $comuna = new Commune('Las Condes');
         $comuna->save();
         echo $comuna->COD_NAME_COMM;
@@ -21,10 +23,10 @@
         //PROFESSIONS
         $profesion = new Professions('Jardinero');
         $profesion-> save();
-        echo $profesion->NAME_PROFESSION;*/
+        echo $profesion->NAME_PROFESSION;
 
         //USER
-        $usuario = new User('14567825', '1', 'Sebastian', 'Muñoz', 'Antonio Varas', '5', 'reparada@gmail.com', '1', '7');
+        $usuario = new User('14567825', '1', 'Sebastian', 'Muñoz', 'Antonio Varas', '5', 'reparada@gmail.com', '2', '7');
         $usuario-> save();
 
         $transform = (int)$usuario->RUT;
@@ -42,9 +44,12 @@
         }
 
         echo $usuario->RUT;
+        */
 
         //WORK_ORDERS - PENDIENTE
 
+        //COMMENTS
+        
 
     //Funciones para eliminar data
 

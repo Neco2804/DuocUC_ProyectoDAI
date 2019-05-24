@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2019 a las 03:45:42
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
+-- Tiempo de generación: 24-05-2019 a las 03:04:07
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,6 +42,27 @@ INSERT INTO `client` (`RUT`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `comment`
+--
+
+CREATE TABLE `comment` (
+  `ID_COMMENT` int(11) NOT NULL COMMENT 'ID de comentario',
+  `CLIENT_RUT` int(11) NOT NULL COMMENT 'Rut del Cliente para generar el comentario',
+  `WORKER_RUT` int(11) NOT NULL COMMENT 'Rut del trabajador para generar el comentario',
+  `COMMENTS` varchar(255) NOT NULL COMMENT 'Tabla de comentarios'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `comment`
+--
+
+INSERT INTO `comment` (`ID_COMMENT`, `CLIENT_RUT`, `WORKER_RUT`, `COMMENTS`) VALUES
+(1, 19565459, 13274933, 'Comentario de prueba'),
+(2, 19565459, 13274933, 'Comentario de prueba para las relaciones');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `commune`
 --
 
@@ -56,7 +77,10 @@ CREATE TABLE `commune` (
 
 INSERT INTO `commune` (`COD_COMUNNE`, `COD_NAME_COMM`) VALUES
 (1, 'Santiago'),
-(2, 'Providencia');
+(2, 'Providencia'),
+(5, 'Maipu'),
+(6, 'Estacion Central'),
+(7, 'Las Condes');
 
 -- --------------------------------------------------------
 
@@ -94,7 +118,9 @@ CREATE TABLE `professions` (
 --
 
 INSERT INTO `professions` (`COD_PROFESSION`, `NAME_PROFESSION`) VALUES
-(1, 'Fontanero');
+(1, 'Fontanero'),
+(2, 'Gasfiter'),
+(3, 'Jardinero');
 
 -- --------------------------------------------------------
 
@@ -129,6 +155,7 @@ CREATE TABLE `user` (
   `DIRECTION` text NOT NULL COMMENT 'Direccion',
   `COMMUNE` int(11) NOT NULL COMMENT 'Comuna',
   `EMAIL` text NOT NULL COMMENT 'Correo Electronico',
+  `PASSWORD` varchar(255) NOT NULL COMMENT 'Contraseña del usuario',
   `TYPE_USER` int(1) NOT NULL COMMENT 'Tipo de usuario',
   `RATING` int(1) NOT NULL COMMENT 'Calificacion'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -137,9 +164,10 @@ CREATE TABLE `user` (
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`RUT`, `DV`, `NAME`, `LAST_NAME`, `DIRECTION`, `COMMUNE`, `EMAIL`, `TYPE_USER`, `RATING`) VALUES
-(13274933, '7', 'Rene', 'Parada', 'Antonio Varas', 2, 'kldjfjgblsidh@outlook.com', 2, 7),
-(19565459, 'k', 'Gustavo', 'Bitterly', 'Conde del Maule', 1, 'asdfgasdfgsadgf@gmail.com', 1, 3);
+INSERT INTO `user` (`RUT`, `DV`, `NAME`, `LAST_NAME`, `DIRECTION`, `COMMUNE`, `EMAIL`, `PASSWORD`, `TYPE_USER`, `RATING`) VALUES
+(13274933, '7', 'Rene', 'Parada', 'Antonio Varas', 2, 'kldjfjgblsidh@outlook.com', '', 2, 7),
+(14383458, '1', 'Oscar', 'Lobos', 'Antonio Varas', 5, 'reparada@gmail.com', '', 1, 7),
+(19565459, 'k', 'Gustavo', 'Bitterly', 'Conde del Maule', 1, 'asdfgasdfgsadgf@gmail.com', '', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -189,6 +217,14 @@ INSERT INTO `work_orders` (`COD_ORDER`, `STATE_ORDER`, `DATE_ORDER`, `CLIENT_RUT
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`RUT`);
+
+--
+-- Indices de la tabla `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`ID_COMMENT`),
+  ADD KEY `CLIENT_RUT` (`CLIENT_RUT`,`WORKER_RUT`),
+  ADD KEY `WORKER_RUT` (`WORKER_RUT`);
 
 --
 -- Indices de la tabla `commune`
@@ -244,10 +280,16 @@ ALTER TABLE `work_orders`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `ID_COMMENT` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID de comentario', AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `commune`
 --
 ALTER TABLE `commune`
-  MODIFY `COD_COMUNNE` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo de comuna', AUTO_INCREMENT=5;
+  MODIFY `COD_COMUNNE` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo de comuna', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `parameter_orders`
@@ -259,7 +301,7 @@ ALTER TABLE `parameter_orders`
 -- AUTO_INCREMENT de la tabla `professions`
 --
 ALTER TABLE `professions`
-  MODIFY `COD_PROFESSION` int(2) NOT NULL AUTO_INCREMENT COMMENT 'Codigo de la profesión', AUTO_INCREMENT=2;
+  MODIFY `COD_PROFESSION` int(2) NOT NULL AUTO_INCREMENT COMMENT 'Codigo de la profesión', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `type_user`
@@ -282,6 +324,13 @@ ALTER TABLE `work_orders`
 --
 ALTER TABLE `client`
   ADD CONSTRAINT `client_ibfk_1` FOREIGN KEY (`RUT`) REFERENCES `user` (`RUT`);
+
+--
+-- Filtros para la tabla `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`WORKER_RUT`) REFERENCES `worker` (`RUT`),
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`CLIENT_RUT`) REFERENCES `client` (`RUT`);
 
 --
 -- Filtros para la tabla `user`
