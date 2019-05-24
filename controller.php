@@ -3,14 +3,14 @@
     //Conexion a Base de Datos
     include('connect.php');
 
-    //Models a utilizar
-    include('Models\client.php');
-    include('Models\commune.php');
-    include('Models\professions.php');
-    include('Models\user.php');
-    include('Models\work_orders.php');
-    include('Models\worker.php');
-    include('Models\comments.php');
+    //models a utilizar
+    include('models\client.php');
+    include('models\commune.php');
+    include('models\professions.php');
+    include('models\user.php');
+    include('models\work_orders.php');
+    include('models\worker.php');
+    include('models\comments.php');
     
     //Funciones para AGREGAR data
 
