@@ -12,7 +12,7 @@
     include('Models\worker.php');
     include('Models\comments.php');
     
-    //Funciones para agregar data
+    //Funciones para AGREGAR data
 
         /*
         //COMMUNE
@@ -42,16 +42,22 @@
             $trabajador-> save();
             echo $trabajador->COD_PROFESSION;            
         }
-
         echo $usuario->RUT;
+
+        //COMMENTS
+        $comentarios = new Comments('19565459','13274933','prueba comentario ingresado por controlador');
+        $comentarios->save();
+        echo $comentarios->COMMENTS;
+
+        //WORK_ORDERS
+        $orden = new Work_orders('00002','1','19565459','13274933');
+        $orden->save();
+        echo $orden->COD_ORDER;
+
         */
 
-        //WORK_ORDERS - PENDIENTE
+    //Funciones para ELIMINAR data
 
-        //COMMENTS - PENDIENTE
-
-    //Funciones para eliminar data
-
-    //Funciones para actualizar data
+    //Funciones para ACTUALIZAR data
 
 ?>

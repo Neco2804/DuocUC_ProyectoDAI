@@ -1,7 +1,7 @@
 <?php
 
     class Comments{
-        var $ID_COMMENT;
+        var $id;
         var $CLIENT_RUT;
         var $WORKER_RUT;
         var $COMMENTS;
@@ -17,7 +17,8 @@
                     VALUES ('".$this->CLIENT_RUT."','".$this->WORKER_RUT."','".$this->COMMENTS."')";
         $link = connect();
         if ($link->query($sql) === TRUE) {
-            $this->ID = $ID_COMMENT;
+            $id = mysqli_insert_id($link);
+            $this->id = $id;
             return $this;
         }else {
             echo "Error: " . $sql . "<br>" . $link->error;

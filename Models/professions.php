@@ -18,7 +18,7 @@
                 $this->id = $id;
                 return $this;
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " . $sql . "<br>" . $link->error;
                 return false;
             }
         }

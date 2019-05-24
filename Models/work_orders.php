@@ -11,7 +11,6 @@
             $this->STATE_ORDER = $STATE_ORDER;
             $this->CLIENT_RUT = $CLIENT_RUT;
             $this->WORKER_RUT = $WORKER_RUT;
-            $this->DIRECTION = $DIRECTION;
         }
 
         function save(){
@@ -22,7 +21,7 @@
             if ($link->query($sql) === TRUE ){
                 return $this;
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " . $sql . "<br>" . $link->error;
                 return false;
             }
         }        
