@@ -10,7 +10,7 @@
     include('Models\user.php');
     include('Models\work_orders.php');
     include('Models\worker.php');
-    include('Models\comments.php')
+    include('Models\comments.php');
     
     //Funciones para agregar data
 
@@ -48,8 +48,7 @@
 
         //WORK_ORDERS - PENDIENTE
 
-        //COMMENTS
-        
+        //COMMENTS - PENDIENTE
 
     //Funciones para eliminar data
 
