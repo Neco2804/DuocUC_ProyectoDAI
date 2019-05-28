@@ -1,9 +1,4 @@
-/*!
- * Start Bootstrap - One Page Wonder v5.0.4 (https://startbootstrap.com/template-overviews/one-page-wonder)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder/blob/master/LICENSE)
- */
-
+<style>
 body {
   font-family: 'Lato';
 }
@@ -65,7 +60,7 @@ header.masthead {
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;*/
-  background-image: url("../img/04.jpg");
+  background-image: url("./img/04.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -170,3 +165,7 @@ header.masthead .bg-circle-4 {
   -webkit-box-shadow: black;
   box-shadow: black;
 }
+
+
+</style>
+
