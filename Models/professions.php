@@ -1,16 +1,16 @@
 <?php
 
-    class Commune{
+    class Professions{
         var $id;
-        var $COD_NAME_COMM;
+        var $NAME_PROFESSION;
 
-        function __construct($COD_NAME_COMM) {
-        $this->COD_NAME_COMM = $COD_NAME_COMM;
+        function __construct($NAME_PROFESSION) {
+        $this->NAME_PROFESSION = $NAME_PROFESSION;
         }
 
         function save(){
-            $sql = "INSERT INTO commune (COD_NAME_COMM)
-                    VALUES ('".$this->COD_NAME_COMM."')";
+            $sql = "INSERT INTO professions (NAME_PROFESSION)
+                    VALUES ('".$this->NAME_PROFESSION."')";
             
             $link = connect();
             if ($link->query($sql) === TRUE) {
