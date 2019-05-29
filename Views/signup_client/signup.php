@@ -11,15 +11,15 @@
     <title>Ayuda.Me - Oficios</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="css/signup.css">
+    <?php include('css/signup_css.php')?>
+    <?php include('js/signup_js.php')?>
 
 </head>
 
@@ -29,11 +29,10 @@
 
     </nav>
 
+
+    
     <div class="container">
  
-    
-
-      
 
             <div class="row">
 
@@ -41,68 +40,69 @@
 
                     <h1 class="text-center">Registro de Usuarios</h1>
  
-                    <form class="well form-horizontal">
+                    <form class="">
 
                         <!--Nombre-->
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="" class="form-control" id="" placeholder="Nombre" />
+                            <input type="text" class="form-control" id="txtName" placeholder="Ingresa tu Nombre" />
                         </div>
 
                         <!--Apellido-->
                         <div class="form-group">
                             <label>Apellido</label>
-                            <input type="" class="form-control" id="" placeholder="Apellido" />
+                            <input type="text" class="form-control" id="txtSurName" placeholder="Ingresa tu Apellido" />
                         </div>
 
 
                         <!--Email-->
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="" class="form-control" id="" placeholder="Email" />
+                            <input type="text" class="form-control" id="txtEmail" placeholder="Ingresa tu Email" />
                         </div>
 
                         <!--RUT-->
                         <div class="form-group">
                             <label>RUT</label>
-                            <input type="" class="form-control" id="" placeholder="RUT" />
+                            <input type="text" class="form-control" id="txtRut" placeholder="Ingresa tu RUT" />
                         </div>
+
                         <!--Dirección-->
                         <div class="form-group">
                             <label>Dirección</label>
-                            <input type="" class="form-control" id="" placeholder="Dirección" />
+                            <input type="text" class="form-control" id="txtAddress" placeholder="Ingresa tu Dirección" />
                         </div>
 
 
                         <!--Comuna-->
                         <div class="form-group">
-                            <label>RUT</label>
-                            <input type="" class="form-control" id="" placeholder="RUT" />
+                            <label>Comuna</label>
+                            <input type="" class="form-control" id="" placeholder="Comuna" />
                         </div>
 
                         <!--Contraseña-->
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input type="" class="form-control" id="" placeholder="Contraseña" />
+                            <input type="password" class="form-control" id="txtPass" placeholder="Contraseña" />
                         </div>
 
 
                         <!--Repetir Contraseña-->
                         <div class="form-group">
                             <label>Repetir Contraseña</label>
-                            <input type="" class="form-control" id="" placeholder="Repetir Contraseña" />
+                            <input type="password" class="form-control" id="txtPassRe" placeholder="Repetir Contraseña" />
                         </div>
                         
                         <div class="form-group text-center">
                         <div class="checkbox">
 					 
                                 <label>
-                                    <input type="checkbox" /> Acepto los Términos y Servicios
+                                    <input type="checkbox" value="0" /> Acepto los Términos y Servicios
                                 </label>
                             </div> </div> 
                         
 
-                        <button type="submit" class="btn btn-primary center-block">
+                        <button type="submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
                                 Submit
                             </button>
                   
