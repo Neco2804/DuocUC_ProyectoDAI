@@ -8,24 +8,26 @@
         var $DIRECTION;
         var $COMMUNE;
         var $EMAIL;
+        var $PASSWORD;
         var $TYPE_USER;
         var $RATING;
 
-        function __construct($RUT, $DV, $NAME, $LAST_NAME, $DIRECTION, $COMMUNE, $EMAIL, $TYPE_USER, $RATING){
-            $this->RUT = $RUT;
-            $this->DV = $DV;
-            $this->NAME = $NAME;
-            $this->LAST_NAME = $LAST_NAME;
-            $this->DIRECTION = $DIRECTION;
-            $this->COMMUNE = $COMMUNE;
-            $this->EMAIL = $EMAIL;
-            $this->TYPE_USER = $TYPE_USER;
-            $this->RATING = $RATING;
+        function __construct($data){
+            $this->RUT = $data['RUT'];
+            $this->DV = $data['DV'];
+            $this->NAME = $data['NAME'];
+            $this->LAST_NAME = $data['LAST_NAME'];
+            $this->DIRECTION = $data['DIRECTION'];
+            $this->COMMUNE = $data['COMMUNE'];
+            $this->EMAIL = $data['EMAIL'];
+            $this->PASSWORD = $data['PASSWORD'];
+            $this->TYPE_USER = $data['TYPE_USER'];
+            $this->RATING = $data['RATING'];
         }
 
         function save(){
-            $sql = "INSERT INTO user (RUT, DV, NAME, LAST_NAME, DIRECTION, COMMUNE, EMAIL, TYPE_USER, RATING)
-                    VALUES ('".$this->RUT."','".$this->DV."','".$this->NAME."','".$this->LAST_NAME."','".$this->DIRECTION."','".$this->COMMUNE."','".$this->EMAIL."','".$this->TYPE_USER."','".$this->RATING."')";
+            $sql = "INSERT INTO user (RUT, DV, NAME, LAST_NAME, DIRECTION, COMMUNE, EMAIL, PASSWORD, TYPE_USER, RATING)
+                    VALUES ('".$this->RUT."','".$this->DV."','".$this->NAME."','".$this->LAST_NAME."','".$this->DIRECTION."','".$this->COMMUNE."','".$this->EMAIL."','".$this->PASSWORD."','".$this->TYPE_USER."','".$this->RATING."')";
 
             $link = connect();
             if ($link->query($sql) === TRUE ){
