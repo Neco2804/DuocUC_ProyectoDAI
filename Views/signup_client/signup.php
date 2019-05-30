@@ -4,7 +4,16 @@
     include 'C:\xampp\htdocs\dai\Models\commune.php';
 
     $comms = Commune::all_communes();
-  
+  /*
+    $firstName = $_POST[];
+    $lastName = $_POST[];
+    $email = $_POST[];
+    $rut = $_POST[];
+    $address = $_POST[];
+    $commune = $_POST[];
+    $password = $_POST[];
+
+*/
 ?>
 
 <!DOCTYPE html>
@@ -49,79 +58,65 @@
 
                     <h1 class="text-center">Registro de Usuarios</h1>
  
-                    <form class="">
+                    <form class="" action="" method="post">
 
                         <!--Nombre-->
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" class="form-control" id="txtName" placeholder="Ingresa tu Nombre" />
+                            <input type="text" class="form-control" name="txtName" id="txtName" placeholder="Ingresa tu Nombre" />
                         </div>
 
                         <!--Apellido-->
                         <div class="form-group">
                             <label>Apellido</label>
-                            <input type="text" class="form-control" id="txtSurName" placeholder="Ingresa tu Apellido" />
+                            <input type="text" class="form-control" name="txtSurName" id="txtSurName" placeholder="Ingresa tu Apellido" />
                         </div>
 
 
                         <!--Email-->
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" class="form-control" id="txtEmail" placeholder="Ingresa tu Email" />
+                            <input type="text" class="form-control" name="txtEmail" id="txtEmail" placeholder="Ingresa tu Email" />
                         </div>
 
                         <!--RUT-->
                         <div class="form-group">
                             <label>RUT</label>
-                            <input type="text" class="form-control" id="txtRut" placeholder="Ingresa tu RUT" />
+                            <input type="text" class="form-control" name="txtRut"  id="txtRut" placeholder="Ingresa tu RUT" />
                         </div>
 
                         <!--Dirección-->
                         <div class="form-group">
                             <label>Dirección</label>
-                            <input type="text" class="form-control" id="txtAddress" placeholder="Ingresa tu Dirección" />
+                            <input type="text" class="form-control" name="txtAddress" id="txtAddress" placeholder="Ingresa tu Dirección" />
                         </div>
 
 
 
-<!--Comuna-->
-<div class="form-group">
+                        <!--Comuna-->
+                        <div class="form-group">
                             <label>Comuna</label>
-                            <select class="form-control" id=""/>
-                                <option selected value="0">Escoja...</option>
-
-
-<?php
-
-for($i=0; $i<count($comms); $i++){
-    $comm = $comms[$i];
-    echo "<option value='$comm->COD_COMUNNE'>$comm->COD_NAME_COMM</option>";
-
-
-}
-
-
-?>
-
-
-
-
-
-
-                            </select>
+                                <select class="form-control" name="" id=""/>
+                                    <option selected value="0">Escoja...</option>
+                                        <?php
+                                            for($i=0; $i<count($comms); $i++){
+                                                $comm = $comms[$i];
+                                                echo "<option value='$comm->COD_COMUNNE'>$comm->COD_NAME_COMM</option>";}
+                                        ?>
+                                </select>
                         </div>
 
                         <!--Contraseña-->
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input type="password" class="form-control" id="txtPass" placeholder="Contraseña" />
+                            <input type="password" class="form-control" name="txtPass" id="txtPass" placeholder="Contraseña" />
                         </div>
 
 
                         <!--Repetir Contraseña-->
                         <div class="form-group">
                             <label>Repetir Contraseña</label>
-                            <input type="password" class="form-control" id="txtPassRe" placeholder="Repetir Contraseña" />
+                            <input type="password" class="form-control" name="txtPassRe" id="txtPassRe" placeholder="Repetir Contraseña" />
                         </div>
                         
                         <div class="form-group text-center">
@@ -133,7 +128,7 @@ for($i=0; $i<count($comms); $i++){
                             </div> </div> 
                         
 
-                        <button type="submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
+                        <button type="submit" value="Submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
                                 Submit
                             </button>
                   
