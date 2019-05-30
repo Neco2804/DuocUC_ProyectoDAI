@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include 'connect.php';
+    include 'C:\xampp\htdocs\dai\Models\commune.php';
+
+    $comms = Commune::all_communes();
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,10 +83,32 @@
                         </div>
 
 
-                        <!--Comuna-->
-                        <div class="form-group">
+
+<!--Comuna-->
+<div class="form-group">
                             <label>Comuna</label>
-                            <input type="" class="form-control" id="" placeholder="Comuna" />
+                            <select class="form-control" id=""/>
+                                <option selected value="0">Escoja...</option>
+
+
+<?php
+
+for($i=0; $i<count($comms); $i++){
+    $comm = $comms[$i];
+    echo "<option value='$comm->COD_COMUNNE'>$comm->COD_NAME_COMM</option>";
+
+
+}
+
+
+?>
+
+
+
+
+
+
+                            </select>
                         </div>
 
                         <!--Contraseña-->
@@ -134,3 +165,4 @@
 </body>
 
 </html>
+
