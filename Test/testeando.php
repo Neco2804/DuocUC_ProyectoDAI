@@ -1,10 +1,11 @@
 <?php
 
 include 'connect.php';
-include 'C:\xampp\htdocs\dai\models\commune.php';
+include 'C:\xampp\htdocs\dai\models\user.php';
 
-$search = Commune::get_commune('1');
+$todos = User::get_user('13274933');
 
-echo $search->COD_NAME_COMM;
+echo $todos->NAME;
+
 
 ?>

@@ -25,6 +25,34 @@
             $this->RATING = $data['RATING'];
         }
 
+        static function all_users(){
+            $query = "SELECT * FROM user;";
+            $link = connect();
+            $result = $link->query($query);
+            $resp = array();
+
+            while($row = $result->fetch_assoc()){
+                $user = new User($row);
+                array_push($resp, $user);
+            }
+
+            return $resp;
+        }
+
+        static function get_user($RUT){
+            $query = "SELECT * FROM user WHERE RUT=".$RUT.";";
+            $link = connect();
+            $result = $link->query($query);
+            $resp = array();
+
+        while($row = $result->fetch_assoc()) {
+            $user = new User($row);
+            array_push($resp, $user);
+        }
+           return $resp[0];
+        }
+
+
         function save(){
             $sql = "INSERT INTO user (RUT, DV, NAME, LAST_NAME, DIRECTION, COMMUNE, EMAIL, PASSWORD, TYPE_USER, RATING)
                     VALUES ('".$this->RUT."','".$this->DV."','".$this->NAME."','".$this->LAST_NAME."','".$this->DIRECTION."','".$this->COMMUNE."','".$this->EMAIL."','".$this->PASSWORD."','".$this->TYPE_USER."','".$this->RATING."')";
@@ -36,7 +64,28 @@
                 echo "Error: " . $sql . "<br>" . $link->error;
                 return false;
             }
-        }        
+        }  
+        
+        function delete(){
+            $sql = "DELETE FROM user where RUT = ".$this->RUT.";";
+            $link = connect();
+            mysqli_query($link, $sql);
+        }
+
+
+        /*
+        
+        Tenemos que revisar qué vamos a actualizar para definir bien la consulta, y la función :P
+
+        function update(){
+            $sql = "UPDATE user SET RUT='".$this->RUT."' WHERE COD_COMUNNE=".$this->COD_COMUNNE;
+            $link = connect();
+            mysqli_query($link, $sql);
+        }
+
+        */
+
+
     }
 
 ?>
