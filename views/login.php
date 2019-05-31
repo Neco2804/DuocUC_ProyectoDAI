@@ -1,32 +1,8 @@
-<?php
-session_start();
-
-if(isset($_SESSION['usr_id'])!="") {
-	header("Location: index.php");
-}
-
-include_once 'connect.php';
-
-//Comprobar de envío el formulario
-if (isset($_POST['login'])) {
-	$link = connect();
-	$email = mysqli_real_escape_string($link, $_POST['email']);
-	$password = mysqli_real_escape_string($link, $_POST['password']);
-	$result = mysqli_query($link, "SELECT * FROM user WHERE EMAIL = '" . $email. "' and PASSWORD = '" . $password . "'");
-
-	if ($row = mysqli_fetch_array($result)) {
-			echo "Usuario conectado correctamente";
-		}else {
-		$errormsg = "Datos incorrectos";
-	}
-}
-
-?>
 <html>
 <head>
 	<title>Inicio de session</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" >
-	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -66,7 +42,7 @@ if (isset($_POST['login'])) {
 		</div>
 	</div>
 
-	<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/jquery-1.10.2.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 	</body>
 </html>

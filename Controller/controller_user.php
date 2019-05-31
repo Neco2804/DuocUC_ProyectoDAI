@@ -16,7 +16,7 @@
 
         /*
         //COMMUNE
-        $comuna = new Commune('Las Condes');
+        $comuna = new Commune('Las condes');
         $comuna->save();
         echo $comuna->COD_NAME_COMM;
 
