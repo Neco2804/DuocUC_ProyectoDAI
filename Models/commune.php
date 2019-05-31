@@ -23,6 +23,19 @@
             return $resp;
         }
 
+        static function get_commune($COD_COMUNNE){
+            $query = "SELECT COD_COMUNNE, COD_NAME_COMM FROM COMMUNE WHERE COD_COMUNNE=".$COD_COMUNNE.";";
+            $link = connect();
+            $result = $link->query($query);
+            $resp = array();
+
+        while($row = $result->fetch_assoc()) {
+            $commune = new Commune($row);
+            array_push($resp, $commune);
+        }
+           return $resp[0];
+        }
+
 
         function save(){
             $sql = "INSERT INTO commune (COD_NAME_COMM) VALUES ('".$this->COD_NAME_COMM."')";
