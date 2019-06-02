@@ -81,7 +81,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="http://localhost/dai/Views/index/02.jpg" alt="">
+            <img class="img-fluid rounded-circle" src="http://localhost/dai/Views/index/img/02.jpg" alt="">
           </div>
         </div>
         <div class="col-lg-6">
