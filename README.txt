@@ -25,3 +25,7 @@ Para utilizar la base de datos ocupada en este proyecto seguir las siguientes in
   2.- Importar el archivo "Create DataBase dbproyecto.sql" o copie su contenido para drear las tablas.
   3.- Si copio el contenido ejecute el codigo el cual ingresara las tablas y datos correspondiente al proyecto.
   4.- Base de Datos "dbproyecto" lista para utilizar.
+
+  *El usuario esta crerado por defecto en el archivo .SQL por lo cual no es necesario crear manualmente uno los datos del usuario de la base de datos son:
+    User: dbproyecto
+    password: dbproyecto
