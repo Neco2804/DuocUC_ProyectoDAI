@@ -1,21 +1,3 @@
-<?php
-    session_start();
-    include 'connect.php';
-    include 'C:\xampp\htdocs\dai\Models\commune.php';
-
-    $comms = Commune::all_communes();
-  /*
-    $firstName = $_POST[];
-    $lastName = $_POST[];
-    $email = $_POST[];
-    $rut = $_POST[];
-    $address = $_POST[];
-    $commune = $_POST[];
-    $password = $_POST[];
-
-*/
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
