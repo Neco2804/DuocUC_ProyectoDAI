@@ -60,7 +60,7 @@ header.masthead {
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;*/
-  background-image: url("./img/04.jpg");
+  background-image: url("http://localhost/dai/Views/index/img/04.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
