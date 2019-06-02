@@ -38,7 +38,8 @@
 
 
         function save(){
-            $sql = "INSERT INTO commune (COD_NAME_COMM) VALUES ('".$this->COD_NAME_COMM."')";
+            $sql = "INSERT INTO commune (COD_NAME_COMM) 
+                    VALUES ('".$this->COD_NAME_COMM."')";
             $link = connect();
             if ($link->query($sql) === TRUE) {
                 $COD_COMUNNE = mysqli_insert_id($link);
@@ -51,7 +52,7 @@
         }
 
         function delete(){
-            $sql = "DELETE FROM commune where COD_COMUNNE = ".$this->COD_COMUNNE.";";
+            $sql = "DELETE FROM commune WHERE COD_COMUNNE = ".$this->COD_COMUNNE.";";
             $link = connect();
             mysqli_query($link, $sql);
         }
