@@ -2,7 +2,7 @@
 <head>
 	<title>Inicio de session</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" >
-	<link rel="stylesheet" href="http://localhost/dai/Views/index/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="http://localhost/dai/Views/login/css/bootstrap.min.css" type="text/css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -37,12 +37,12 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4 text-center">	
-			No tienes cuenta? <a href="register.php">Regitrate aqui</a>
+			No tienes cuenta? <a href="http://localhost/dai/Views/signup/signup_client.php">Regitrate aqui</a>
 			</div>
 		</div>
 	</div>
 
-	<script src="http://localhost/dai/Views/index/js/jquery-1.10.2.js"></script>
-	<script src="http://localhost/dai/Views/index/js/bootstrap.min.js"></script>
+	<script src="http://localhost/dai/Views/login/js/jquery-1.10.2.js"></script>
+	<script src="http://localhost/dai/Views/login/js/bootstrap.min.js"></script>
 	</body>
 </html>

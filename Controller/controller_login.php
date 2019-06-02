@@ -4,10 +4,10 @@
     session_start();
 
     if(isset($_SESSION['usr_id'])!="") {
-	    header("Location: ../index.php");
+	    header("Location: ../views/index/index.php");
     }
 	
-	include ('../views/login.php');
+	include ('../views/login/login.php');
 
         //Comprobar de envío el formulario
         if (isset($_POST['login'])) {
@@ -17,7 +17,7 @@
 	        $result = mysqli_query($link, "SELECT * FROM user WHERE EMAIL = '" . $email. "' and PASSWORD = '" . $password . "'");
 
 	        if ($row = mysqli_fetch_array($result)) {
-				header('Location: ../index.php');
+				header('Location: ../views/index/index.php');
 		    }else {
 				$errormsg = "Datos incorrectos";
 				echo "Datos incorrectos";
