@@ -45,10 +45,10 @@
             $result = $link->query($query);
             $resp = array();
 
-        while($row = $result->fetch_assoc()) {
-            $user = new User($row);
-            array_push($resp, $user);
-        }
+            while($row = $result->fetch_assoc()) {
+                $user = new User($row);
+                array_push($resp, $user);
+            }
            return $resp[0];
         }
 
@@ -58,7 +58,9 @@
                     VALUES ('".$this->RUT."','".$this->DV."','".$this->NAME."','".$this->LAST_NAME."','".$this->DIRECTION."','".$this->COMMUNE."','".$this->EMAIL."','".$this->PASSWORD."','".$this->TYPE_USER."','".$this->RATING."')";
 
             $link = connect();
-            if ($link->query($sql) === TRUE ){
+            if ($link->query($sql) === TRUE ){/*
+                $RUT = mysqli_insert_id($link);
+                $this->RUT = $RUT;*/
                 return $this;
             } else {
                 echo "Error: " . $sql . "<br>" . $link->error;
@@ -67,7 +69,7 @@
         }  
         
         function delete(){
-            $sql = "DELETE FROM user where RUT = ".$this->RUT.";";
+            $sql = "DELETE FROM user WHERE RUT = ".$this->RUT.";";
             $link = connect();
             mysqli_query($link, $sql);
         }
