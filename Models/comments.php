@@ -16,14 +16,14 @@
             $sql = "INSERT INTO comment (CLIENT_RUT, WORKER_RUT, COMMENTS) 
                     VALUES ('".$this->CLIENT_RUT."','".$this->WORKER_RUT."','".$this->COMMENTS."')";
         $link = connect();
-        if ($link->query($sql) === TRUE) {
-            $id = mysqli_insert_id($link);
-            $this->id = $id;
-            return $this;
-        }else {
-            echo "Error: " . $sql . "<br>" . $link->error;
-            return false;
-        }
+            if ($link->query($sql) === TRUE) {
+                $id = mysqli_insert_id($link);
+                $this->id = $id;
+                return $this;
+            }else {
+                echo "Error: " . $sql . "<br>" . $link->error;
+                return false;
+            }
         }    
     }
 

@@ -1,9 +1,11 @@
 <?php
 
 include 'connect.php';
-include 'C:\xampp\htdocs\dai\models\commune.php';
+include 'C:\xampp\htdocs\dai\models\user.php';
 
-$comuna_lp = Commune::all_communes();
+$todos = User::get_user('13274933');
 
-echo count($comuna_lp);
+echo $todos->NAME;
+
+
 ?>
