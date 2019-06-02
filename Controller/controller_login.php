@@ -9,8 +9,6 @@
 	
 	include ('../views/login.php');
 
-    //function envioFormulario(){
-
         //Comprobar de envío el formulario
         if (isset($_POST['login'])) {
 	        $link = connect();
@@ -19,13 +17,12 @@
 	        $result = mysqli_query($link, "SELECT * FROM user WHERE EMAIL = '" . $email. "' and PASSWORD = '" . $password . "'");
 
 	        if ($row = mysqli_fetch_array($result)) {
-				echo "Usuario conectado correctamente";
-				include ('../index.php');
+				header('Location: ../index.php');
 		    }else {
 				$errormsg = "Datos incorrectos";
+				echo "Datos incorrectos";
+				trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);
 	        }
-        }          
-
-    //}
-
+		}          
+		
 ?>
