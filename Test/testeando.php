@@ -1,11 +1,11 @@
 <?php
 
 include 'connect.php';
-include 'C:\xampp\htdocs\dai\models\user.php';
+include 'C:\xampp\htdocs\dai\models\professions.php';
 
-$todos = User::get_user('13274933');
+$todos = Professions::all_professions();
 
-echo $todos->NAME;
+echo gettype($todos);
 
 
 ?>
