@@ -59,7 +59,7 @@
 
                     <h1 class="text-center">Registro de Usuarios</h1>
  
-                    <form class="" action="" method="post">
+                    <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupForm">
 
                         <!--Nombre-->
                         <div class="form-group">
@@ -97,7 +97,7 @@
                         <!--Comuna-->
                         <div class="form-group">
                             <label>Comuna</label>
-                                <select class="form-control" name="" id="optCommune"/>
+                                <select class="form-control" name="idCommune" id=""/>
                                     <option selected value="0">Escoja...</option>
                                         <?php
                                             for($i=0; $i<count($comms); $i++){
@@ -129,7 +129,7 @@
                             </div> </div> 
                         
 
-                        <button type="submit" value="Submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
+                        <button type="submit" name="signup_client" value="Submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
                                 Submit
                             </button>
                   
