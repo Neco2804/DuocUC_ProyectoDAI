@@ -4,7 +4,7 @@
     session_start();
 
     if(isset($_SESSION['usr_id'])!="") {
-	    header("Location: ../views/index/index.php");
+	    header("Location: ../Controller/controller_index.php");
     }
 	
 	include ('../views/login/login.php');
@@ -17,7 +17,7 @@
 	        $result = mysqli_query($link, "SELECT * FROM user WHERE EMAIL = '" . $email. "' and PASSWORD = '" . $password . "'");
 
 	        if ($row = mysqli_fetch_array($result)) {
-				header('Location: ../views/index/index.php');
+				header('Location: ../Controller/controller_index.php');
 		    }else {
 				$errormsg = "Datos incorrectos";
 				echo "Datos incorrectos";
