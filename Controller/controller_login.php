@@ -6,10 +6,10 @@
     if(isset($_SESSION['usr_id'])!="") {
 	    header("Location: ../index.php");
     }
-    
 	
+	include ('../views/login.php');
 
-    function envioFormulario(){
+    //function envioFormulario(){
 
         //Comprobar de envío el formulario
         if (isset($_POST['login'])) {
@@ -19,12 +19,13 @@
 	        $result = mysqli_query($link, "SELECT * FROM user WHERE EMAIL = '" . $email. "' and PASSWORD = '" . $password . "'");
 
 	        if ($row = mysqli_fetch_array($result)) {
-			    echo "Usuario conectado correctamente";
+				echo "Usuario conectado correctamente";
+				include ('../index.php');
 		    }else {
-		        $errormsg = "Datos incorrectos";
+				$errormsg = "Datos incorrectos";
 	        }
         }          
 
-    }
+    //}
 
 ?>
