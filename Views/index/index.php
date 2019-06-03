@@ -37,7 +37,10 @@
             <a class="nav-link" href="#">Ingreso</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Registro</a>
+            <a class="nav-link" href="#">Registro Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Registro Clientes</a>
           </li>
         </ul>
       </div>

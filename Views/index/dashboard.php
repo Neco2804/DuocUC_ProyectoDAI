@@ -38,7 +38,11 @@
             <a class="nav-link" href="#"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Salir</a>
+
+
+            <a class="nav-link" href="localhost/dai/Controller/controller_logout.php?destroy">Cerrar Sesión</a>
+         
+         
           </li>
         </ul>
       </div>
@@ -46,7 +50,12 @@
   </nav>
 
 
+<div class="container">
 
+
+
+
+</div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
