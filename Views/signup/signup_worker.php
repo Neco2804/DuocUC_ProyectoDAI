@@ -1,23 +1,3 @@
-<?php
-    session_start();
-    include 'connect.php';
-    include 'C:\xampp\htdocs\dai\Models\commune.php';
-    include 'C:\xampp\htdocs\dai\Models\professions.php';
-
-    $comms = Commune::all_communes();
-    $profs = Professions::all_professions();
-  /*
-    $firstName = $_POST[];
-    $lastName = $_POST[];
-    $email = $_POST[];
-    $rut = $_POST[];
-    $address = $_POST[];
-    $commune = $_POST[];
-    $password = $_POST[];
-
-*/
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +40,7 @@
 
                     <h1 class="text-center">Registro de Trabajador</h1>
  
-                    <form class="" action="" method="post">
+                    <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupForm">
 
                         <!--Nombre-->
                         <div class="form-group">
@@ -98,7 +78,7 @@
                         <!--Comuna-->
                         <div class="form-group">
                             <label>Comuna</label>
-                                <select class="form-control" name="" id=""/>
+                                <select class="form-control" name="idCommune" id=""/>
                                     <option selected value="0">Escoja...</option>
                                         <?php
                                             for($i=0; $i<count($comms); $i++){
@@ -111,7 +91,7 @@
                         <!--Oficio-->
                         <div class="form-group">
                             <label>Oficio</label>
-                                <select class="form-control" name="" id=""/>
+                                <select class="form-control" name="idProfession" id=""/>
                                     <option selected value="0">Escoja...</option>
                                         <?php
                                             for($i=0; $i<count($profs); $i++){
@@ -144,7 +124,7 @@
                             </div> </div> 
                         
 
-                        <button type="submit" value="Submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
+                        <button type="submit" name="signup_worker" value="Submit" class="btn btn-secondary btn-lg center-block" id="btnSubmit">
                                 Submit
                             </button>
                   
