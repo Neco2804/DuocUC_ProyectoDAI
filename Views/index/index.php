@@ -27,7 +27,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Ayuda.Me</a>
+      <a class="navbar-brand" href="http://localhost/dai/Controller/controller_index.php">Ayuda.Me</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,7 +52,7 @@
       <div class="container">
         <h1 class="masthead-heading mb-0">AYUDA.ME</h1>
         <h2 class="masthead-subheading mb-0">Busca u Ofrece Oficios en tu zona</h2>
-        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Más Info</a>
+        <a href="http://localhost/dai/Controller/controller_about.php" class="btn btn-primary btn-xl rounded-pill mt-5">Más Info</a>
       </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
