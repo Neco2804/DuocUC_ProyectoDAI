@@ -38,7 +38,7 @@
           $worker = new Worker($datosWorker);
           $worker-> save();
          
-          header("Location: http://localhost/dai/Controller/controller_index.php");
+          header('Location: ../Controller/controller_index.php');
           exit();
           
         }else{
