@@ -7,7 +7,7 @@
 
     session_start();
     if(isset($_SESSION['usr_id'])!="") {
-	    header("Location: ../Controller/controller_index.php");
+	    header("Location: ../Controller/controller_dashboard.php");
     }
 
     $comms = Commune::all_communes();
@@ -37,7 +37,7 @@
           $client = new client($datosClient);
           $client-> save();
 
-          header("Location: ../Controller/controller_index.php");
+          header('Location: ../Controller/controller_dashboard.php');
         }else{
           $errormsg = "Datos incorrectos";
           echo "Datos incorrectos";
