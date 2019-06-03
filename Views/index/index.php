@@ -37,10 +37,10 @@
             <a class="nav-link" href="http://localhost/dai/Controller/controller_login.php">Ingreso</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Registro Usuarios</a>
+            <a class="nav-link" href="http://localhost/dai/Controller/controller_signup_worker.php">Registro Trabajadores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Registro Clientes</a>
+            <a class="nav-link" href="http://localhost/dai/Controller/controller_signup_client.php">Registro Clientes</a>
           </li>
         </ul>
       </div>

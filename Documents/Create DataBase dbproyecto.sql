@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2019 a las 03:04:07
+-- Tiempo de generación: 03-06-2019 a las 03:42:13
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -57,8 +57,7 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`ID_COMMENT`, `CLIENT_RUT`, `WORKER_RUT`, `COMMENTS`) VALUES
-(1, 19565459, 13274933, 'Comentario de prueba'),
-(2, 19565459, 13274933, 'Comentario de prueba para las relaciones');
+(1, 19565459, 13274933, 'Comentario de prueba');
 
 -- --------------------------------------------------------
 
@@ -149,7 +148,7 @@ INSERT INTO `type_user` (`COD_TYPE_USER`, `NAME_TYPE_USER`) VALUES
 
 CREATE TABLE `user` (
   `RUT` int(8) NOT NULL COMMENT 'RUN',
-  `DV` text NOT NULL COMMENT 'Digito Verificador',
+  `DV` text COMMENT 'Digito Verificador',
   `NAME` text NOT NULL COMMENT 'Nombre',
   `LAST_NAME` text NOT NULL COMMENT 'Apellido',
   `DIRECTION` text NOT NULL COMMENT 'Direccion',
@@ -157,7 +156,7 @@ CREATE TABLE `user` (
   `EMAIL` text NOT NULL COMMENT 'Correo Electronico',
   `PASSWORD` varchar(255) NOT NULL COMMENT 'Contraseña del usuario',
   `TYPE_USER` int(1) NOT NULL COMMENT 'Tipo de usuario',
-  `RATING` int(1) NOT NULL COMMENT 'Calificacion'
+  `RATING` int(1) DEFAULT NULL COMMENT 'Calificacion'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -165,9 +164,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`RUT`, `DV`, `NAME`, `LAST_NAME`, `DIRECTION`, `COMMUNE`, `EMAIL`, `PASSWORD`, `TYPE_USER`, `RATING`) VALUES
-(13274933, '7', 'Rene', 'Parada', 'Antonio Varas', 2, 'kldjfjgblsidh@outlook.com', '', 2, 7),
-(14383458, '1', 'Oscar', 'Lobos', 'Antonio Varas', 5, 'reparada@gmail.com', '', 1, 7),
-(19565459, 'k', 'Gustavo', 'Bitterly', 'Conde del Maule', 1, 'asdfgasdfgsadgf@gmail.com', '', 1, 3);
+(13274933, '7', 'Rene', 'Parada', 'Antonio Varas', 2, 'kldjfjgblsidh@outlook.com', '123', 2, 7),
+(19565459, 'k', 'Gustavo', 'Bitterly', 'Conde del Maule', 1, 'gustavo@gmail.com', '123', 1, 3);
 
 -- --------------------------------------------------------
 
