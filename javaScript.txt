@@ -1,6 +1,0 @@
-$("a").click(function(event)){
-    event.preventDefault();
-});
-
-
-https://stackoverflow.com/questions/9347282/using-jquery-preventing-form-from-submitting
