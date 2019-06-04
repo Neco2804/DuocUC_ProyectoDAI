@@ -1,7 +1,7 @@
 <?php
 
     //Conexion a Base de Datos
-    include('connect.php');
+    include('..\utils\connect.php');
 
     //models a utilizar
     include('models\client.php');

@@ -1,5 +1,5 @@
 <?php
-    include 'C:\xampp\htdocs\dai\connect.php';
+    include 'C:\xampp\htdocs\dai\utils\connect.php';
     include 'C:\xampp\htdocs\dai\Models\user.php';
     include 'C:\xampp\htdocs\dai\Models\worker.php';
     include 'C:\xampp\htdocs\dai\Models\commune.php';
@@ -7,13 +7,11 @@
 
     session_start();
     if(isset($_SESSION['usr_id'])!="") {
-	    header("Location: ../Controller/controller_index.php");
+	    header("Location: ../Controller/controller_dashboard.php");
     }
 
     $comms = Commune::all_communes();
     $profs = Professions::all_professions();
-
-    include '..\Views\signup\signup_worker.php';
 
     //Comprobar de envío el formulario
     if(isset($_POST['signup_worker'])) {
@@ -38,7 +36,7 @@
           $worker = new Worker($datosWorker);
           $worker-> save();
          
-          header('Location: ../Controller/controller_index.php');
+          include 'C:\xampp\htdocs\dai\views\index\dashboard.php';
           exit();
           
         }else{
@@ -46,6 +44,8 @@
           echo "Datos incorrectos";
           trigger_error("Datos ingresado son incorrectos", E_USER_ERROR); 
         }
+      }else{
+        include('..\Views\signup\signup_worker.php');
       }     
 
 ?>

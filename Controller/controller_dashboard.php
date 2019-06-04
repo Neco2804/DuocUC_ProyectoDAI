@@ -2,7 +2,7 @@
 
     session_start();
     
-    include '../connect.php';
+    include 'C:\xampp\htdocs\dai\utils\connect.php';
     include 'C:\xampp\htdocs\dai\Models\user.php';
 
     $users = User::all_users();
