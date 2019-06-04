@@ -1,12 +1,9 @@
 <?php
-  include 'C:\xampp\htdocs\dai\utils\connect.php';
-
-    session_start();
-
-    if(isset($_SESSION['usr_id'])!="") {
-	    header("Location: ../Controller/controller_index.php");
-    }
+	include 'C:\xampp\htdocs\dai\utils\connect.php';
 	
+		// Comiendo de la sesión
+		session_start();
+
 	include ('../views/login/login.php');
 
         //Comprobar de envío el formulario
@@ -17,6 +14,9 @@
 	        $result = mysqli_query($link, "SELECT * FROM user WHERE EMAIL = '" . $email. "' and PASSWORD = '" . $password . "'");
 
 	        if ($row = mysqli_fetch_array($result)) {
+								// Guardar datos de sesión
+								$_SESSION["usuario"] = $email;
+								echo "Sesión iniciada y establecido nombre de usuario!" . "<br>";
 				header('Location: ../Controller/controller_index.php');
 		    }else {
 				$errormsg = "Datos incorrectos";
