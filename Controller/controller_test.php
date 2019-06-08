@@ -3,51 +3,36 @@
     include 'C:\xampp\htdocs\dai\utils\connect.php';
     include 'C:\xampp\htdocs\dai\models\user.php';
     
-    $allUsers = User::all_users();
-    $usuarioql = User::get_user_by_email('asdfgasdfgsadgf@gmail.com');
-
-
-
-    echo $usuarioql->NAME;
-        //$link = connect();
+    session_start();
         
-        /*$result = $link->query($query);
-        $resp = array();
+        
+        //Comprobar de envío el formulario
+        if(isset($_POST['username']) && isset($_POST['password'])){
+            $username = $_POST['username'];
+            $password = $_POST['password'];
 
-        while($row = $result->fetch_assoc()) {
-            $user = new User($row);
-            array_push($resp, $user);
-        }
-       return $resp[0];
-       
-    }
-    */
-   
+            $login = User::get_user_by_email($username);
 
-
-    /*
-    // Comiendo de la sesión
-	session_start();
-
-
-    
-    include ('../views/login/login.php');
+            echo $login->NAME;
+            echo "<br>";
+            echo $login->RUT;
+            echo "<br>";
+            echo $login->COMMUNE;
+            echo "<br>";
+            //var_dump($login);
+            //$_SESSION["user_id"] = $login->RUT;
+            //include('../Views/index/index.php');
 
 
-
-    
-    if(isset($_POST['username']) && isset($_POST['password'])){
-        $username = $_POST('username');
-        $password = $_POST('password');
-        echo $username;
-    }else{
-        if(isset($_SESSION['user_id'])){
-            $user = $_POST('username');
-            echo "logeado";
         }else{
-            include ('../views/login/login.php');
+            if(isset($_SESSION['user_id'])){
+               // $user = User::get_user_by_id($_SESSION['user_id']);
+               //include('../Views/index/index.php');
+            }else{
+                //include('../views/login/login.php');
+                include ("../Test/view_test.php");
+            }
         }
-    }
-   */
-  ?>
+
+   ?>
 
