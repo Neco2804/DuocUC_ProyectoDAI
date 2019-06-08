@@ -12,16 +12,11 @@
             $password = $_POST['password'];
 
             $login = User::get_user_by_email($username);
-
-            echo $login->NAME;
-            echo "<br>";
-            echo $login->RUT;
-            echo "<br>";
-            echo $login->COMMUNE;
-            echo "<br>";
+            
+            
             //var_dump($login);
             //$_SESSION["user_id"] = $login->RUT;
-            //include('../Views/index/index.php');
+            include('../Test/view_test2.php');
 
 
         }else{
