@@ -28,7 +28,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Ayuda.Me - Bienvenid@</a>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#"> <?php if(isset($user)){echo $user->NAME;} ?> </a>
+      <a class="navbar-brand" href="controller_logout.php"> Cerrar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,11 +39,6 @@
             <a class="nav-link" href="#"></a>
           </li>
           <li class="nav-item">
-
-
-            <a class="nav-link" href="localhost/dai/Controller/controller_logout.php?destroy">Cerrar Sesión</a>
-         
-         
           </li>
         </ul>
       </div>

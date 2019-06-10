@@ -4,12 +4,6 @@
     include 'C:\xampp\htdocs\dai\Models\user.php';
     include 'C:\xampp\htdocs\dai\Models\client.php';
     include 'C:\xampp\htdocs\dai\Models\commune.php';
-    
-
-    session_start();
-    if(isset($_SESSION['usr_id'])!="") {
-	    header("Location: ../Controller/controller_dashboard.php");
-    }
 
     $comms = Commune::all_communes();
     

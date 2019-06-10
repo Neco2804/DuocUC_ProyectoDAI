@@ -7,20 +7,11 @@
 
     $users = User::all_users();
 
-
-
-    IF(ISSET($_GET['destroy'])){
-        session_start();
-        session_destroy();
-        header('Location: Contoller/controller_login.php');
+    if (session_destroy()) {
+        include('../views/login/login.php');
+    } else {
+        include('../views/index/dashboard.php');   
     }
-
-
-
-
-
-
-    include ('../views/index/dashboard.php');
 
 
 ?>
