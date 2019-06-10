@@ -53,6 +53,19 @@
            return $resp[0];
         }
 
+        static function get_user_by_email($EMAIL){
+            $query = "SELECT * FROM user WHERE EMAIL='".$EMAIL."'";
+            $link = connect();
+            $result = $link->query($query);
+            $resp = array();
+
+            while($row = $result->fetch_assoc()) {
+                $user = new User($row);
+                array_push($resp, $user);
+            }
+           return $resp[0];
+        }
+
 
         function save(){
             $sql = "INSERT INTO user (RUT, DV, NAME, LAST_NAME, DIRECTION, COMMUNE, EMAIL, PASSWORD, TYPE_USER, RATING)

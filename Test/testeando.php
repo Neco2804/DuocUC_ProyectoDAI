@@ -1,15 +1,9 @@
 <?php
 
-include 'connect.php';
-include 'C:\xampp\htdocs\dai\models\professions.php';
-include 'C:\xampp\htdocs\dai\models\user.php';
-include 'C:\xampp\htdocs\dai\models\client.php';
+session_start();
 
-/*
-$datos = array('RUT'=>'12345679','DV'=>'9','NAME'=>'Pepe','LAST_NAME'=>'Tapia','DIRECTION'=>'Las Rejas 1', 'COMMUNE'=>'1', 'EMAIL'=>'pepe@tapia.cl', 'PASSWORD'=>'admin', 'TYPE_USER'=>'1', 'RATING'=>' ');
-$persona = new User($datos);
-$persona->save();
-$persona->TYPE_USER;
-*/
+include ("../Test/testeando.php");
+
+var_dump($_POST);
 
 ?>
