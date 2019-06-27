@@ -1,6 +1,6 @@
 <?php
-	include 'C:\xampp\htdocs\dai\utils\connect.php';
-	include 'C:\xampp\htdocs\dai\Models\user.php';
+	include '../utils/connect.php';
+	include '../Models/user.php';
 	
 		// Comienzo de la sesión
 		session_start();
@@ -16,7 +16,7 @@
 								// Guardar datos de sesión
 								$_SESSION["user_id"] = $email;
 								$user = User::get_user($_SESSION["user_id"]);
-								include 'C:\xampp\htdocs\dai\views\index\dashboard.php';
+								include '../views/index/dashboard.php';
 		    }else {
 				$errormsg = "Datos incorrectos";
 				echo "Datos incorrectos";

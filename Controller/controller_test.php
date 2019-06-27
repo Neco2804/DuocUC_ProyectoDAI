@@ -1,7 +1,7 @@
 <?php
 
-    include 'C:\xampp\htdocs\dai\utils\connect.php';
-    include 'C:\xampp\htdocs\dai\models\user.php';
+    include '../dai/utils/connect.php';
+    include '../dai/models/user.php';
     
     session_start();
         
@@ -16,7 +16,7 @@
             
             //var_dump($login);
             //$_SESSION["user_id"] = $login->RUT;
-            include('../Test/view_test2.php');
+            include '../Test/view_test2.php';
 
 
         }else{
@@ -25,7 +25,7 @@
                //include('../Views/index/index.php');
             }else{
                 //include('../views/login/login.php');
-                include ("../Test/view_test.php");
+                include "../Test/view_test.php";
             }
         }
 

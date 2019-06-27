@@ -1,9 +1,9 @@
 <?php
 
-    include 'C:\xampp\htdocs\dai\utils\connect.php';
-    include 'C:\xampp\htdocs\dai\Models\user.php';
-    include 'C:\xampp\htdocs\dai\Models\client.php';
-    include 'C:\xampp\htdocs\dai\Models\commune.php';
+    include '../utils/connect.php';
+    include '../Models/user.php';
+    include '../Models/client.php';
+    include '../Models/commune.php';
 
     $comms = Commune::all_communes();
     
@@ -28,13 +28,13 @@
         $client = new client($datosClient);
         $client-> save();
         
-        include 'C:\xampp\htdocs\dai\views\index\dashboard.php';
+        include '../Views/index/dashboard.php';
       }else{
         $errormsg = "Datos incorrectos";
         echo "Datos incorrectos";
         trigger_error("Datos ingresado son incorrectos", E_USER_ERROR); 
       }
     }else{
-      include('..\Views\signup\signup_client.php');
+      include '../Views/signup/signup_client.php';
     }
 ?>

@@ -1,9 +1,9 @@
 <?php
-    include 'C:\xampp\htdocs\dai\utils\connect.php';
-    include 'C:\xampp\htdocs\dai\Models\user.php';
-    include 'C:\xampp\htdocs\dai\Models\worker.php';
-    include 'C:\xampp\htdocs\dai\Models\commune.php';
-    include 'C:\xampp\htdocs\dai\Models\professions.php';
+    include '../utils/connect.php';
+    include '../Models/user.php';
+    include '../Models/worker.php';
+    include '../Models/commune.php';
+    include '../Models/professions.php';
 
     session_start();
     if(isset($_SESSION['usr_id'])!="") {
@@ -36,7 +36,7 @@
           $worker = new Worker($datosWorker);
           $worker-> save();
          
-          include 'C:\xampp\htdocs\dai\views\index\dashboard.php';
+          include '../views/index/dashboard.php';
           exit();
           
         }else{
@@ -45,7 +45,7 @@
           trigger_error("Datos ingresado son incorrectos", E_USER_ERROR); 
         }
       }else{
-        include('..\Views\signup\signup_worker.php');
+        include'../Views/signup/signup_worker.php';
       }     
 
 ?>
