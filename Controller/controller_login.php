@@ -18,13 +18,19 @@
 								$user = User::get_user($_SESSION["user_id"]);
 								include '../views/index/dashboard.php';
 		    }else {
-				$errormsg = "Datos incorrectos";
-				echo "Datos incorrectos";
+				//$errormsg = "Datos incorrectos";
+				//echo "Datos incorrectos";
 				//trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);
-			
+				include '../views/login/login.php';
+				include '../Utils/wrongPassword.php';
+				/*echo '<script language="javascript">';
+				echo 'alert("Máscala Gustavo")';
+				echo '</script>';*/
+				
+
 			}
 		}else{
-			include('../views/login/login.php');
+			include '../views/login/login.php';
 		}          
 		
 ?>
