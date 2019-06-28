@@ -1,6 +1,7 @@
 <?php
 	include '../Utils/connect.php';
 	include '../Models/user.php';
+	include '../Utils/puertoReParada.php';
 
         //Comprobar de envío el formulario
         if (isset($_POST['login'])) {
@@ -27,7 +28,7 @@
 
 			}
 		}else{
-			include '../Views/login/login.php';
+			include 'http://localhost:'.$portReParada.'/dai/Views/login/login.php';
 		}          
 		
 ?>
