@@ -20,7 +20,7 @@
 		    }else {
 				$errormsg = "Datos incorrectos";
 				echo "Datos incorrectos";
-				trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);
+				//trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);
 			
 			}
 		}else{
