@@ -1,7 +1,4 @@
 <?php
-
-    session_start();
-    
     include '../utils/connect.php';
     include '../Models/user.php';
 
