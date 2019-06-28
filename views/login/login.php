@@ -37,7 +37,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4 text-center">	
-			No tienes cuenta? <a href="http://localhost/dai/Views/signup/signup_client.php">Regitrate aqui</a>
+			No tienes cuenta? <a href="http://localhost/dai/Views/signup/signup_client.php">Registrate aqui</a>
 			</div>
 		</div>
 	</div>
