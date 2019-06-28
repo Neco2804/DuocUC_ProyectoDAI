@@ -1,9 +1,6 @@
 <?php
 	include '../Utils/connect.php';
 	include '../Models/user.php';
-	
-		// Comienzo de la sesión
-		session_start();
 
         //Comprobar de envío el formulario
         if (isset($_POST['login'])) {

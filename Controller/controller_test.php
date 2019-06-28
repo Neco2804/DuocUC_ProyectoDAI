@@ -2,9 +2,6 @@
 
     include '../Utils/connect.php';
     include '../Models/user.php';
-    
-    session_start();
-        
         
         //Comprobar de envío el formulario
         if(isset($_POST['username']) && isset($_POST['password'])){

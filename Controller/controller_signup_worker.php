@@ -4,8 +4,7 @@
     include '../Models/worker.php';
     include '../Models/commune.php';
     include '../Models/professions.php';
-
-    session_start();
+    
     if(isset($_SESSION['usr_id'])!="") {
 	    header("Location: ../Controller/controller_dashboard.php");
     }
