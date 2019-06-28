@@ -1,7 +1,7 @@
 <?php
 
-    include '../dai/utils/connect.php';
-    include '../dai/models/user.php';
+    include '../Utils/connect.php';
+    include '../Models/user.php';
     
     session_start();
         

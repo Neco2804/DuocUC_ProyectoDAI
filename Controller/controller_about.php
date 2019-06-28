@@ -1,5 +1,5 @@
 <?php
-    include '../utils/connect.php';
+    include '../Utils/connect.php';
 
-    include '../views/about/about.php';
+    include '../Views/about/about.php';
 ?>

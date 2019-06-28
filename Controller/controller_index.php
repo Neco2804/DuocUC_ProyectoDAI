@@ -1,5 +1,5 @@
 <?php
-    include '../utils/connect.php';
+    include '../Utils/connect.php';
 
     session_start();
 

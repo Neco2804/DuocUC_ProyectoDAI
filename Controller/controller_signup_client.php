@@ -1,6 +1,6 @@
 <?php
 
-    include '../utils/connect.php';
+    include '../Utils/connect.php';
     include '../Models/user.php';
     include '../Models/client.php';
     include '../Models/commune.php';

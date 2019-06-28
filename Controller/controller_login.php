@@ -1,5 +1,5 @@
 <?php
-	include '../utils/connect.php';
+	include '../Utils/connect.php';
 	include '../Models/user.php';
 	
 		// Comienzo de la sesión
@@ -16,12 +16,12 @@
 								// Guardar datos de sesión
 								$_SESSION["user_id"] = $email;
 								$user = User::get_user($_SESSION["user_id"]);
-								include '../views/index/dashboard.php';
+								include '../Views/index/dashboard.php';
 		    }else {
 				//$errormsg = "Datos incorrectos";
 				//echo "Datos incorrectos";
 				//trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);
-				include '../views/login/login.php';
+				include '../Views/login/login.php';
 				include '../Utils/wrongPassword.php';
 				/*echo '<script language="javascript">';
 				echo 'alert("Máscala Gustavo")';
@@ -30,7 +30,7 @@
 
 			}
 		}else{
-			include '../views/login/login.php';
+			include '../Views/login/login.php';
 		}          
 		
 ?>
