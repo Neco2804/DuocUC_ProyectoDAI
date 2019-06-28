@@ -3,5 +3,5 @@
 
     session_start();
 
-    include '../views/index/index.php';
+    include '../Views/index/index.php';
 ?>
