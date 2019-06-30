@@ -12,17 +12,16 @@
 	        if ($row = mysqli_fetch_array($result)) {
 								// Guardar datos de sesión
 								$_SESSION["user_id"] = $email;
-								$user = User::get_user($_SESSION["user_id"]);
-								include '../Views/index/dashboard.php';
+								$user = User::get_user($email);
+
+								include '../Views/user_main/user_main.php';
 		    }else {
 				//$errormsg = "Datos incorrectos";
 				//echo "Datos incorrectos";
 				//trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);
 				include '../Views/login/login.php';
 				include '../Utils/wrongPassword.php';
-				/*echo '<script language="javascript">';
-				echo 'alert("Máscala Gustavo")';
-				echo '</script>';*/
+
 				
 
 			}

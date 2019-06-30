@@ -41,7 +41,6 @@
 
         static function get_user($EMAIL){
             $query = "SELECT * FROM user WHERE EMAIL='".$EMAIL."';";
-            echo $query;
             $link = connect();
             $result = $link->query($query);
             $resp = array();
