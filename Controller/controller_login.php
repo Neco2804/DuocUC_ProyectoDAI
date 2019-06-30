@@ -27,7 +27,7 @@
 
 			}
 		}else{
-			include 'http://localhost/dai/Views/login/login.phpp';
+			include '../Views/login/login.php';
 		}          
 		
 ?>
