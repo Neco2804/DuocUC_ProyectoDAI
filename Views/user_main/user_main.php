@@ -55,8 +55,8 @@
 <div class="container">
 <div class="row">
 		<div class="col-md-6">
-			 <form>
-			<button type="button" class="btn btn-success btn-block">
+			 <form action="http://localhost/dai/Controller/controller_main_user.php" method="POST" >
+			<button type="submit" class="btn btn-success btn-block" value="buscar" >
 				Solicita una Visita
 			</button>
 			<p>

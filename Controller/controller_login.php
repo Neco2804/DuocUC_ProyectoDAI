@@ -1,6 +1,7 @@
 <?php
 	include '../Utils/connect.php';
 	include '../Models/user.php';
+	session_start();
 
         //Comprobar de envío el formulario
         if (isset($_POST['login'])) {
@@ -13,9 +14,10 @@
 								// Guardar datos de sesión
 								$_SESSION["user_id"] = $email;
 								$user = User::get_user($email);
-
+								$email = mysqli_real_escape_string($link, $_POST['email']);
 								include '../Views/user_main/user_main.php';
-		    }else {
+
+			}else{
 				//$errormsg = "Datos incorrectos";
 				//echo "Datos incorrectos";
 				//trigger_error("Datos ingresado son incorrectos", E_USER_ERROR);

@@ -16,6 +16,7 @@
                 return false;
         }else{
             return $link;
+            session_start();
         }
     }
 ?>
